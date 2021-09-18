@@ -14,7 +14,7 @@
 	
 	<div>
 	
-		<a href="addPatient.jsp">Add New Patient</a>
+		<a href="/WEB-INF/addPatient.jsp">Add New Patient</a>
 		<br>
 		
 		<form action="remove.do" method="GET">

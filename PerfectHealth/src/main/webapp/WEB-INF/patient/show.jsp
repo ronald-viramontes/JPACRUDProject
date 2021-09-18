@@ -34,7 +34,7 @@
 	</div>
 	
 	<a href="edit.jsp">Edit Patient Data</a>
-	<a href="home.jsp">Home</a>
+	<a href="home.go">Home</a>
 
 </body>
 </html>
