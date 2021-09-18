@@ -27,6 +27,8 @@
 			<br>
 			Address: <input type="text" value="${patient.address}"> 
 			<br>
+			City: <input type="text" value="${patient.city}">
+			<br>
 			State: <input type="text" value="${patient.state}"> 
 			<br>
 			Zip Code: <input type="text" value="${patient.zipcode}">
@@ -37,6 +39,10 @@
 			
 		</form>
 		
+		<form action="home.do" method="GET">
+			<input type="hidden" name="home" />
+				<input class="btn btn-primary" type="submit" value="HOME" />
+		</form>
 		
 	</div>
 

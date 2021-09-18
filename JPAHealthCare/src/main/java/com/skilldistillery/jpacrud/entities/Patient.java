@@ -12,10 +12,26 @@ import javax.persistence.Id;
 public class Patient {
 	
 	
-	
 	public Patient() {
 		super();
 	}
+	
+	public Patient(Integer id, String firstName, String middleInitial, String lastName, LocalDate dateOfBirth,
+			String ssn, String address, String city, String state, String zipcode, String phone) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.middleInitial = middleInitial;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
+		this.ssn = ssn;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.zipcode = zipcode;
+		this.phone = phone;
+	}
+
 
 	public Patient(String firstName, String lastName, LocalDate dateOfBirth, String ssn) {
 		super();
@@ -25,11 +41,15 @@ public class Patient {
 		this.ssn = ssn;
 	}
 	
+	
+
+
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="patient_id")
-	private int id;
+	private Integer id;
 	
 	@Column(name="first_name")
 	private String firstName;
@@ -45,12 +65,24 @@ public class Patient {
 	
 	private String ssn;
 	
+	private String address;
+	
+	private String city;
+	
+	@Column(name="state_abbrev")
+	private String state;
+	
+	private String zipcode;
+	
+	private String phone;
 
+
+	
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -134,16 +166,6 @@ public class Patient {
 		this.phone = phone;
 	}
 
-	private String address;
-	
-	private String city;
-	
-	@Column(name="state_abbrev")
-	private String state;
-	
-	private String zipcode;
-	
-	private String phone;
 	
 	@Override
 	public String toString() {
@@ -151,10 +173,5 @@ public class Patient {
 				+ lastName + ", dateOfBirth=" + dateOfBirth + ", ssn=" + ssn + ", address=" + address + ", city=" + city
 				+ ", state=" + state + ", zipcode=" + zipcode + ", phone=" + phone + "]";
 	}
-	
-	
-	
-	
-	
-	
+		
 }

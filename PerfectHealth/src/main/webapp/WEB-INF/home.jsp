@@ -14,15 +14,18 @@
 	
 	<div>
 	
-		<a href="/WEB-INF/addPatient.jsp">Add New Patient</a>
-		<br>
-		
+				
+		<form action="add.do" method="GET">
+			<input type="hidden" />
+				<input class="btn btn-primary" type="submit" value="Add Patient" />
+	</form>
+	<br>
+				
 		<form action="remove.do" method="GET">
 			Enter Patient ID: <input type="text" name="pid" />
 			<input class="btn btn-warning" type="submit" value="Remove Patient" />
 		</form>
-		
-		
+		<br>		
 		<form action="getPatient.do" method="GET">
 			Patient ID:	<input type="text" name="pid" />
 			<input class="btn btn-primary" type="submit" value="Show Patient" />

@@ -25,6 +25,8 @@
 			<br>
 			Address: ${patient.address} 
 			<br>
+			City: ${patient.city}
+			<br>
 			State: ${patient.state} 
 			<br>
 			Zip Code: ${patient.zipcode}
@@ -38,8 +40,11 @@
 			<input class="btn btn-warning" type="submit" value="Edit Patient" />
 		</form>
 	
-
-	<a href="home.go">Home</a>
-
+	<form action="home.do" method="GET">
+			<input type="hidden" name="home" />
+				<input class="btn btn-primary" type="submit" value="HOME" />
+	</form>
+	
+	
 </body>
 </html>
