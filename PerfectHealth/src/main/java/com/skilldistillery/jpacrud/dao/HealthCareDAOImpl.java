@@ -33,20 +33,8 @@ public class HealthCareDAOImpl implements HealthCareDAO {
 
 	@Override
 	public Patient addPatient(Patient patient) {
-//		Patient dbPatient = new Patient();
-//		dbPatient.setFirstName(patient.getFirstName());
-//		dbPatient.setMiddleInitial(patient.getMiddleInitial());
-//		dbPatient.setLastName(patient.getLastName());
-//		dbPatient.setSsn(patient.getSsn());
-//		dbPatient.setDateOfBirth(patient.getDateOfBirth());
-//		dbPatient.setAddress(patient.getAddress());
-//		dbPatient.setPhone(patient.getPhone());
-//		dbPatient.setState(patient.getState());
-//		dbPatient.setZipcode(patient.getZipcode());
-//		dbPatient.setCity(patient.getCity());
-		System.out.println("before persist: " + patient);
+
 		em.persist(patient);
-		System.out.println("after persist: " + patient);
 
 		return patient;
 	}

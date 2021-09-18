@@ -9,7 +9,10 @@
 <body>
 		<h2>Patient Record Change or Delete Failed</h2>
 
-	<a href="home.jsp">Return Home</a>
+		<form action="home.do" method="GET">
+			<input type="hidden" name="home" />
+				<input class="btn btn-primary" type="submit" value="HOME" />
+		</form>
 
 </body>
 </html>
