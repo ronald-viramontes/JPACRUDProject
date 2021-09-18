@@ -33,7 +33,12 @@
 		
 	</div>
 	
-	<a href="edit.jsp">Edit Patient Data</a>
+	<form action="edit.do" method="GET">
+		<input type="hidden" name="pid" value="${patient.id}" />
+			<input class="btn btn-warning" type="submit" value="Edit Patient" />
+		</form>
+	
+
 	<a href="home.go">Home</a>
 
 </body>

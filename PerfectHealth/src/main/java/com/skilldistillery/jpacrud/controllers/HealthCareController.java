@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpacrud.dao.HealthCareDAO;
 import com.skilldistillery.jpacrud.entities.Patient;
@@ -28,12 +31,22 @@ public class HealthCareController {
 		return "patient/show";
 	}
 	
-	@RequestMapping(path = "edit.do")
-	public String editPatient(Patient patient, Model model) {
+	@RequestMapping(path="edit.do", method=RequestMethod.POST)
+	public String editForm(@RequestParam Patient patient, Model model) {
+//		Integer id = patient.getId();
 		patient = dao.updatePatient(patient.getId(), patient);
-		model.addAttribute("patient", patient);
+		model.addAttribute("edit.do");
 		
 		return "patient/show";
+	}
+	
+	
+	@RequestMapping(path = "edit.do", method=RequestMethod.GET)
+	public String editPatient(@RequestParam Integer pid, Model model) {
+		Patient patient = dao.findById(pid);
+		model.addAttribute("patient", patient);
+		
+		return "patient/edit";
 	}
 	
 	@RequestMapping(path = "add.do")
@@ -48,14 +61,16 @@ public class HealthCareController {
 	}
 	
 	@RequestMapping(path = "remove.do")
-	public String removePatient(int id, Model model) {
-		boolean result = dao.deletePatient(id);
-		
+	public String removePatient(int pid, Model model) {
+		boolean result = dao.deletePatient(pid);
+				
 		if (result == true) {
 			return"patient/success";
 		} else {
 			return "patient/fail";
 		}
+	
+		
 		
 	}
 }

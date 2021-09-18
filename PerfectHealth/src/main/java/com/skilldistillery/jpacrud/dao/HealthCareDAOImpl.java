@@ -33,12 +33,8 @@ public class HealthCareDAOImpl implements HealthCareDAO {
 
 	@Override
 	public Patient addPatient(Patient patient) {
-		em.getTransaction().begin();
 		em.persist(patient);
-		em.flush();
-		em.getTransaction().commit();
-		em.close();
-		
+
 		return patient;
 	}
 
@@ -46,7 +42,6 @@ public class HealthCareDAOImpl implements HealthCareDAO {
 	public Patient updatePatient(int id, Patient patient) {
 		Patient dbPatient = em.find(Patient.class, id);
 				
-		em.getTransaction().begin();
 		
 		dbPatient.setFirstName(patient.getFirstName());
 		dbPatient.setMiddleInitial(patient.getMiddleInitial());
@@ -58,25 +53,20 @@ public class HealthCareDAOImpl implements HealthCareDAO {
 		dbPatient.setState(patient.getState());
 		dbPatient.setZipcode(patient.getZipcode());
 		dbPatient.setCity(patient.getCity());
+		em.flush();
 		
-		em.getTransaction().commit();
-		em.close();
-		
-		return patient;
+		return dbPatient;
 	}
 
 	@Override
 	public boolean deletePatient(int id) {
 		boolean result = false;
 		Patient patient = em.find(Patient.class, id);
-		em.getTransaction().begin();
 		em.remove(patient);
-		em.getTransaction().commit();
 		
 		patient = em.find(Patient.class, id);
 		result = ! em.contains(patient);
 		
-		em.close();
 				
 		return result;
 	}
