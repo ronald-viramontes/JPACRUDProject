@@ -102,6 +102,14 @@ public class Patient {
 		this.address = address;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
 	public String getState() {
 		return state;
 	}
@@ -128,6 +136,8 @@ public class Patient {
 
 	private String address;
 	
+	private String city;
+	
 	@Column(name="state_abbrev")
 	private String state;
 	
@@ -138,8 +148,8 @@ public class Patient {
 	@Override
 	public String toString() {
 		return "Patient [id=" + id + ", firstName=" + firstName + ", middleInitial=" + middleInitial + ", lastName="
-				+ lastName + ", dateOfBirth=" + dateOfBirth + ", ssn=" + ssn + ", address=" + address + ", state="
-				+ state + ", zipcode=" + zipcode + ", phone=" + phone + "]";
+				+ lastName + ", dateOfBirth=" + dateOfBirth + ", ssn=" + ssn + ", address=" + address + ", city=" + city
+				+ ", state=" + state + ", zipcode=" + zipcode + ", phone=" + phone + "]";
 	}
 	
 	
