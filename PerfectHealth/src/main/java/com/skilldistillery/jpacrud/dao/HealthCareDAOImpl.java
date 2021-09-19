@@ -55,7 +55,7 @@ public class HealthCareDAOImpl implements HealthCareDAO {
 		dbPatient.setZipcode(patient.getZipcode());
 		dbPatient.setCity(patient.getCity());
 		em.flush();
-
+		
 		return dbPatient;
 	}
 

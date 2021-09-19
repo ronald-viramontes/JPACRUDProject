@@ -5,10 +5,30 @@
 <head>
 <meta charset="UTF-8">
 	<jsp:include page="../bootstrapHead.jsp"></jsp:include>
+		<style>
+		#right {
+			text-align: right;
+		}
+		#center {
+			text-align: center;
+		}
+		#left {
+			text-align: left;
+		}
+		
+	</style>
+	
 <title>Patient Details</title>
 </head>
 <body>
-	<div>
+
+	<div id="center">
+		<h1>Perfect Health Patient Data Portal</h1>
+			
+		<img src="images/PerfectHealth.png" /> 
+	</div>
+	
+	<div id="center">
 		<h2>Patient Data</h2>
 		<br>
 		<h5>Patient ID: ${patient.id} 
@@ -33,17 +53,19 @@
 			<br> 
 			Phone Number: ${patient.phone}</h5>
 		
-	</div>
-	
 	<form action="edit.do" method="GET">
 		<input type="hidden" name="pid" value="${patient.id}" />
 			<input class="btn btn-warning" type="submit" value="Edit Patient" />
 		</form>
+		
+		<br>
 	
 	<form action="home.do" method="GET">
 			<input type="hidden" name="home" />
 				<input class="btn btn-primary" type="submit" value="HOME" />
 	</form>
+	
+	</div>
 	
 	
 </body>

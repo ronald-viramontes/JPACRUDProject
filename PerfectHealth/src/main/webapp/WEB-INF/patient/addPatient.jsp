@@ -5,13 +5,33 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
-
+<style>
+		#right {
+			text-align: right;
+		}
+		#center {
+			text-align: center;
+		}
+		#left {
+			text-align: left;
+		}
+		
+	</style>
 <title>Add New Patient</title>
 </head>
 <body>
-	<div>
+
+	<div id="center">
+		<h1>Perfect Health Patient Data Portal</h1>
+			
+		<img src="images/PerfectHealth.png" /> 
+	</div>
+	
+	<br>
+	
+	<div id="center">
 		<form action="add.do" method="POST" >
-			<h2>Patient Data</h2>
+			<h2>New Patient Data Entry</h2>
 			<br>
 		<h5> 
 			<br>

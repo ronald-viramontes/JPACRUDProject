@@ -31,20 +31,19 @@ public class HealthCareController {
 	}
 
 	@RequestMapping(path = "edit.do", method=RequestMethod.GET)
-	public String editPatient(@RequestParam int pid, Model model) {
+	public String editPatient(@RequestParam Integer pid, Model model) {
 		String viewName = "patient/edit";
 		Patient patient = dao.findById(pid);
 		model.addAttribute("patient", patient);
-		model.addAttribute("pid", pid);
 		return viewName;
 	}
 	
-	@RequestMapping(path="edit.do", method=RequestMethod.POST, params="patient")
-	public String editForm(Patient patient, @RequestParam("pid") int pid, Model model) {
-		
-		
-		String viewName = "home";
-			dao.updatePatient(pid, patient);
+	@RequestMapping(path="edit.do", method=RequestMethod.POST)
+	public String editForm(Patient patient, @RequestParam Integer pid, Model model) {
+		System.out.println("edit.do Post Method" + patient);
+		String viewName = "patient/show";
+		dao.updatePatient(pid, patient);
+		model.addAttribute("pid", pid);
 		
 		return viewName;
 	}
