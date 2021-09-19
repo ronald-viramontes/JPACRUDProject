@@ -1,6 +1,5 @@
 package com.skilldistillery.jpacrud.entities;
 
-import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +15,7 @@ public class Patient {
 		super();
 	}
 	
-	public Patient(Integer id, String firstName, String middleInitial, String lastName, LocalDate dateOfBirth,
+	public Patient(Integer id, String firstName, String middleInitial, String lastName, String dateOfBirth,
 			String ssn, String address, String city, String state, String zipcode, String phone) {
 		super();
 		this.id = id;
@@ -33,7 +32,7 @@ public class Patient {
 	}
 
 
-	public Patient(String firstName, String lastName, LocalDate dateOfBirth, String ssn) {
+	public Patient(String firstName, String lastName, String dateOfBirth, String ssn) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -61,7 +60,7 @@ public class Patient {
 	private String lastName;
 	
 	@Column(name="date_of_birth")
-	private LocalDate dateOfBirth;
+	private String dateOfBirth;
 	
 	private String ssn;
 	
@@ -110,11 +109,11 @@ public class Patient {
 		this.lastName = lastName;
 	}
 
-	public LocalDate getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 

@@ -38,13 +38,11 @@ public class HealthCareDAOImpl implements HealthCareDAO {
 
 		return patient;
 	}
+	
 
 	@Override
-	public Patient updatePatient(Integer id, Patient patient) {
-		Patient dbPatient = new Patient();
-				dbPatient = em.find(Patient.class, id);
-		
-		System.out.println("Line: 45" + dbPatient);
+	public Patient updatePatient(int id, Patient patient) {
+		Patient dbPatient = em.find(Patient.class, id);
 		
 		dbPatient.setFirstName(patient.getFirstName());
 		dbPatient.setMiddleInitial(patient.getMiddleInitial());
@@ -57,10 +55,7 @@ public class HealthCareDAOImpl implements HealthCareDAO {
 		dbPatient.setZipcode(patient.getZipcode());
 		dbPatient.setCity(patient.getCity());
 		em.flush();
-		
-		em.refresh(dbPatient);
-		System.out.println("Line: 58" + dbPatient);
-		
+
 		return dbPatient;
 	}
 
@@ -75,6 +70,15 @@ public class HealthCareDAOImpl implements HealthCareDAO {
 		
 				
 		return result;
+	}
+
+	@Override
+	public int findIdBySsn(String ssn) {
+				
+		String query = "SELECT p.id FROM Patient p WHERE p.ssn = :ssn";
+		Integer id = (Integer) em.createQuery(query).setParameter("ssn", ssn).getSingleResult();
+		
+		return id;
 	}
 
 }
