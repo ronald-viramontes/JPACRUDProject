@@ -55,10 +55,10 @@
 			<br> 
 			Phone Number: <input type="text" name="phone"></h5>		
 			
-			<input class="btn btn-primary" type="submit" value="Add Patient" />
+			<input class="btn btn-warning" type="submit" value="Add Patient" />
 			
 		</form>
-		
+			<br>
 		<form action="home.do" method="GET">
 			<input type="hidden" name="home" />
 				<input class="btn btn-primary" type="submit" value="HOME" />
