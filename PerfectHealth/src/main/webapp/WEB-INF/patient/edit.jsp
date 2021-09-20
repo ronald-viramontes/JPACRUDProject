@@ -32,33 +32,39 @@
 			<h2>Edit Existing Patient Data</h2>
 		<br>
 		<h5>
-			Patient ID: <input type="text" value="${patient.id}" name="id">
+			Patient ID: <input type="text" value="${patient.id}" name="id"> [Reference]
+			<br>
 			<br>
 			First Name: <input type="text" value="${patient.firstName}" name="firstName" > 
-			<br>
+			
 			Middle Initial: <input type="text" value="${patient.middleInitial}" name="middleInitial" > 
-			<br>
+			
 			Last Name: <input type="text" value="${patient.lastName}" name="lastName">
 			<br>
-			Date of Birth: <input type="text" value="${patient.dateOfBirth}" name="dateOfBirth" > 
 			<br>
-			SSN: <input type="text" value="${patient.ssn}" name="ssn" > 
+			Date of Birth: <input type="text" value="${patient.dateOfBirth}" name="dateOfBirth" > [YYYY-MM-DD] 
+			SSN: <input type="text" value="${patient.ssn}" name="ssn"> [No Dashes] 
+			<br>
 			<br>
 			Address: <input type="text" value="${patient.address}" name="address" > 
-			<br>
-			City: <input type="text" value="${patient.city}" name="city" >
-			<br>
-			State: <input type="text" value="${patient.state}" name="state" > 
-			<br>
-			Zip Code: <input type="text" value="${patient.zipcode}" name="zipcode" >
-			<br> 
-			Phone Number: <input type="text" value="${patient.phone}" name="phone" ></h5>		
 			
+			City: <input type="text" value="${patient.city}" name="city" >
+			
+			State: <input type="text" value="${patient.state}" name="state" >[Abbreviation] 
+			
+			Zip Code: <input type="text" value="${patient.zipcode}" name="zipcode" >
+			<br>
+			<br> 
+			Phone Number: <input type="text" value="${patient.phone}" name="phone" >[Digits Only]
+			</h5>
+			<br>		
+			<br>
 			<input type="hidden" name="pid" value="${patient.id}">
 			<input class="btn btn-warning" type="submit" value="Submit Changes" />
 			
 		</form>
-		
+			<br>
+			<br>
 		<form action="home.do" method="GET">
 			<input type="hidden" name="home" />
 				<input class="btn btn-primary" type="submit" value="HOME" />

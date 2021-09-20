@@ -35,33 +35,26 @@
 			<br>
 		<h5> 
 			<br>
-			First Name: <input type="text" name="firstName"> 
+			First Name: <input type="text" name="firstName"> Middle Initial: <input type="text" name="middleInitial"> Last Name: <input type="text" name="lastName">
 			<br>
-			Middle Initial: <input type="text" name="middleInitial"> 
 			<br>
-			Last Name: <input type="text" name="lastName">
+			Date of Birth: <input type="text" name="dateOfBirth" value="YYYY-MM-DD"> SSN: <input type="text" name="ssn" value="#########"> 
 			<br>
-			Date of Birth: <input type="text" name="dateOfBirth"> 
 			<br>
-			SSN: <input type="text" name="ssn"> 
-			<br>
-			Address: <input type="text" name="address"> 
-			<br>
-			City: <input type="text" name="city">
-			<br>
-			State: <input type="text" name="state"> 
-			<br>
-			Zip Code: <input type="text" name="zipcode">
+			Address: <input type="text" name="address"> City: <input type="text" name="city"> State: <input type="text" name="state" value="XX"> Zip Code: <input type="text" name="zipcode" value="#####">
 			<br> 
-			Phone Number: <input type="text" name="phone"></h5>		
-			
+			<br> 
+			Phone Number: <input type="text" name="phone" value="##########"></h5>		
+			<br>
+			<br>			
 			<input class="btn btn-warning" type="submit" value="Add Patient" />
+			<br>
+			<br>
 			
 		</form>
-			<br>
 		<form action="home.do" method="GET">
 			<input type="hidden" name="home" />
-				<input class="btn btn-primary" type="submit" value="HOME" />
+			<input class="btn btn-primary" type="submit" value="HOME" />
 		</form>
 		
 	</div>
