@@ -26,32 +26,45 @@
 		<h1>Perfect Health Patient Data Portal</h1>
 			
 		<img src="images/PerfectHealth.png" /> 
-	</div>
 	
-	<div id="center">
 		<h2>Patient Data</h2>
 		<br>
-		<h5>Patient ID: ${patient.id} 
-			<br>
-			First Name: ${patient.firstName} 
-			<br>
-			Middle Initial: ${patient.middleInitial} 
-			<br>
-			Last Name: ${patient.lastName}
-			<br>
-			Date of Birth: ${patient.dateOfBirth} 
-			<br>
-			SSN: ${patient.ssn} 
-			<br>
-			Address: ${patient.address} 
-			<br>
-			City: ${patient.city}
-			<br>
-			State: ${patient.state} 
-			<br>
-			Zip Code: ${patient.zipcode}
-			<br> 
-			Phone Number: ${patient.phone}</h5>
+	</div>
+	
+	<table class="table thead-dark table-striped table-hover">
+		
+		<thead>
+			<tr>
+			<th>Patient ID</th>
+			<th>First Name</th>
+			<th>Middle Initial</th>
+			<th>Last Name</th>
+			<th>Date of Birth</th>
+			<th>SSN</th>
+			<th>Address</th>
+			<th>City</th>
+			<th>State</th>
+			<th>Zip Code</th>
+			<th>Phone</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>${patient.id}</td> 
+			<td>${patient.firstName}</td> 
+			<td>${patient.middleInitial}</td>
+			<td>${patient.lastName}</td>
+			<td>${patient.dateOfBirth}</td> 
+			<td>${patient.ssn}</td> 
+			<td>${patient.address}</td> 
+			<td>${patient.city}</td>
+			<td>${patient.state}</td>
+			<td>${patient.zipcode}</td>
+			<td>${patient.phone}</td>
+		</tr>
+		</tbody>
+	</table>
+		<div id="center">
 		
 	<form action="edit.do" method="GET">
 		<input type="hidden" name="pid" value="${patient.id}" />
